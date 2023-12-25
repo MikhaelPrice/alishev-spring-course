@@ -1,8 +1,10 @@
 package spring.course;
 
-public class ClassicalMusic implements Music {
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.stereotype.Component;
 
-    private ClassicalMusic() {}
+@Component
+public class ClassicalMusic implements Music {
 
     public static ClassicalMusic getClassicalMusic(){
         return new ClassicalMusic();
@@ -19,5 +21,10 @@ public class ClassicalMusic implements Music {
     @Override
     public String getSong() {
         return "Poloness";
+    }
+
+    @Override
+    public Music musicBeanBuilder(ClassPathXmlApplicationContext context) {
+        return context.getBean("classicalMusic", Music.class);
     }
 }
