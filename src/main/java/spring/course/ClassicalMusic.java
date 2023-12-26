@@ -3,7 +3,7 @@ package spring.course;
 import org.springframework.stereotype.Component;
 
 @Component
-public class ClassicalMusic implements Music {
+public class ClassicalMusic {
 
     public static ClassicalMusic getClassicalMusic(){
         return new ClassicalMusic();
@@ -15,11 +15,6 @@ public class ClassicalMusic implements Music {
 
     public void destroy() {
         System.out.println("Destroying...");
-    }
-
-    @Override
-    public String getSong() {
-        return "Poloness";
     }
 
 }

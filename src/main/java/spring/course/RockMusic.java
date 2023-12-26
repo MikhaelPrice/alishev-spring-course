@@ -2,6 +2,9 @@ package spring.course;
 
 import org.springframework.stereotype.Component;
 
+import java.util.Arrays;
+import java.util.List;
+
 @Component
 public class RockMusic implements Music {
 
@@ -10,8 +13,8 @@ public class RockMusic implements Music {
     }
 
     @Override
-    public String getSong() {
-        return "Die, die my Darling";
+    public List<String> getSongs() {
+        return Arrays.asList("Die, die my Darling", "Hero", "Faint");
     }
 
 }

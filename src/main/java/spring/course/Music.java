@@ -1,7 +1,7 @@
 package spring.course;
 
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import java.util.List;
 
 public interface Music {
-    String getSong();
+    List<String> getSongs();
 }
