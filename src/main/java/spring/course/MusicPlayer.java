@@ -1,36 +1,23 @@
 package spring.course;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.stereotype.Component;
+
+@Component
 public class MusicPlayer {
-    private Music music;
 
-    private String name;
-    private int volume;
+    private ClassicalMusic classicalMusic;
+    private RockMusic rockMusic;
 
-    public String getName() {
-        return name;
+    @Autowired
+    public MusicPlayer(ClassicalMusic classicalMusic, RockMusic rockMusic) {
+        this.classicalMusic = classicalMusic;
+        this.rockMusic = rockMusic;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public String playMusic() {
+        return "Playing: " + rockMusic.getSong();
     }
 
-    public int getVolume() {
-        return volume;
-    }
-
-    public void setVolume(int volume) {
-        this.volume = volume;
-    }
-
-    public Music getMusic() {
-        return music;
-    }
-
-    public void setMusic(Music music) {
-        this.music = music;
-    }
-
-    public void playMusic() {
-        System.out.println("Playing: " + music.getSong());
-    }
 }

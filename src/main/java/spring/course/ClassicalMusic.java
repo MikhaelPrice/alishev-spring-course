@@ -1,6 +1,5 @@
 package spring.course;
 
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -23,8 +22,4 @@ public class ClassicalMusic implements Music {
         return "Poloness";
     }
 
-    @Override
-    public Music musicBeanBuilder(ClassPathXmlApplicationContext context) {
-        return context.getBean("classicalMusic", Music.class);
-    }
 }
